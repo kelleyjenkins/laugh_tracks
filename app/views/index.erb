@@ -1,12 +1,19 @@
-<header>Comedians List</header>
+<header>
+  <h1>Comedians List</h1>
+</header>
 
-<div>
-  <body>
+<body>
+  <div>
     <% @comedians.each do |comedian| %>
     <p>Name: <%= comedian.name %></p>
     <p>Age: <%= comedian.age %></p>
-    <p>Special: <%= special.name %> </p>
+    <p>Specials: <%= comedian.special_id %> </p>
     <% end %>
-    <p>
-  </body>
-</div>
+    <% @specials.each do |special| %>
+    <p>Special: <%= special.name %></p>
+    <p> Id: <%= special.comedian_id %> </p>
+    <% end %>
+    <p>Average Age for All Comedians:
+        <%= "#{Comedian.average_age.to_i}" %> </p>
+    </div>
+</body>
